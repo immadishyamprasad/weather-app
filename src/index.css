@@ -1,13 +1,137 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:Roboto;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.app{
+  
+}
+
+
+.container.warm{
+  background-image: url('../assets/warm-bg.jpg');
+}
+main{
+  min-height: 100vh;
+  position: relative;
+  
+}
+
+.search-box{
+  position: absolute;
+  top: 0;
+  height: 60px;
+  width: 100%;
+  display: flex;
+}
+.shade{
+  background-image: linear-gradient(to bottom,rgba(0,0,0,0.2),rgba(0,0,0,0.75));
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  background-image: url('../assets/cold-bg.jpg');
+  max-width: 600px;
+  margin: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: 0.4 ease-out;
+  
+}
+
+
+
+.content{
+  
+ box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+  width: 100%;
+  padding: 100px 0;
+  height: 100vh;
+  
+}
+
+
+
+
+.search-bar{
+  padding: 10px 15px;
+  font-size: 19px;
+  width: 70%;
+  border: none;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  margin: 0 auto;
+  background-color: rgba(225, 225, 225, 0.6);
+  color: black;
+}
+.search-bar:focus{
+  outline: none;
+  box-shadow: 1px 1px 10px  rgba(0, 0, 0, 0.5);
+  background-color: rgba(225, 225, 225, 0.75);
+}
+
+.bottom{
+  display: flex;
+  background-color: rgba(225, 225, 225, 0.75);
+  margin: 0 auto ;
+  
+ 
+  border-radius: 20px;
+  font-size: 20px;
+  width: 70%;
+  padding: 0 15px;
+  justify-content: space-evenly;
+  font-family:Arial, Helvetica, sans-serif;
+}
+.top>div{
+  margin: 1vh 0;
+  font-size: 25px;
+}
+.top .location{
+  font-size: 40px;
+  font-weight: 500;
+}
+.top .temp{
+  font-size: 90px;
+  font-weight: 600;
+
+}
+
+.top{
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 8vh;
+  border-radius: 20px;
+  display: flex;
+  padding:  0px 15px;
+  background-color: rgba(225, 225, 225, 0.75);
+  flex-direction: column;
+
+
+}
+
+.bottom > div{
+  flex: 1;
+  text-align: center;
+  padding: 0px 2px;
+}
+.val{
+  font-weight: 700;
+ 
+  
 }
