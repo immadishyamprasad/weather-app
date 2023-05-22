@@ -1,7 +1,8 @@
 
 import React,{useState} from "react";
 import axios from "axios";
-import {FaSearch} from 'react-icons/fa'
+import {FaSearch} from 'react-icons/fa';
+import brandlogo from "./shyam-logo.png";
 
 
 
@@ -38,6 +39,11 @@ function App() {
   return (
     <div className={(data.main != undefined) ? (data.main.temp > 20 ? 'app warm' : 'app')  :'app' }>
       <main className={ (data.main != undefined) ? (data.main.temp > 20 ? 'container warm' : 'container')  :'container' }>
+        <div className="brand-logo">
+          <a href="https://immadishyamprasad.github.io/portfolio-react/" target="_blank">
+            <img style={{width:"100px"}} src={brandlogo} alt="" />
+          </a>
+        </div>
         <div className="shade">
           <div className="search-box">
             <div>
@@ -51,7 +57,10 @@ function App() {
               
             </div>
           </div>
-          {data.name == undefined && (<div className="intro"> { error ? "Enter Valid City Name " : "Enter City name to Know Weather"} </div>)}
+          {data.name == undefined && <div className="intro">
+            <p className="title">Welcome to Weather app</p>
+            <p>Enter City name to Know Weather</p>
+          </div>}
           {data.name != undefined &&
             <div className="content">
                 <div className="top">
