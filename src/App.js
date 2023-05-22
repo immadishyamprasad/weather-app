@@ -1,6 +1,7 @@
 
 import React,{useState} from "react";
 import axios from "axios";
+import {FaSearch} from 'react-icons/fa'
 
 
 
@@ -9,18 +10,25 @@ import axios from "axios";
 function App() {
   const [data,setData] = useState({});
   const [location,setLocation] = useState('');
+  const [error,setError] = useState(false);
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=6f7a457908b03ede32c3c36af9f19250`;
 
   const searchLocation = (event)=>{
-    if(event.key === 'Enter'){
-      fetch(url)
+    const response= null;
+    if(event.key === 'Enter' || event.key === undefined  ){
+      try{
+        response = fetch(url)
         .then(res=>{
           return res.json();
         }).then(data=>{
           setData(data);
-        }).catch(error=>{
-          console.log(error);
-        });
+          
+        })
+      }catch(e){
+        setError(true);
+        
+        console.log("hi");
+      }
 
         
     }
@@ -32,11 +40,18 @@ function App() {
       <main className={ (data.main != undefined) ? (data.main.temp > 20 ? 'container warm' : 'container')  :'container' }>
         <div className="shade">
           <div className="search-box">
+            <div>
               <input type="text" value={location} 
               onChange={(event)=>setLocation(event.target.value)}
               onKeyDown={searchLocation}
               className="search-bar" placeholder="Search..." />
+              <button onClick={(e)=>searchLocation(e)} className="icon">
+                <FaSearch  size={20} />
+              </button>
+              
+            </div>
           </div>
+          {data.name == undefined && (<div className="intro"> { error ? "Enter Valid City Name " : "Enter City name to Know Weather"} </div>)}
           {data.name != undefined &&
             <div className="content">
                 <div className="top">
