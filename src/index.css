@@ -13,13 +13,20 @@ code {
     monospace;
 }
 
+
 .app{
-  
+  background: linear-gradient(to right, rgb(168, 197, 220), rgb(120, 166, 188));
+  transition: background 0.7s;
 }
 
+.app.warm{
+  background: linear-gradient(to right, rgb(198, 93, 138), rgb(198, 93, 125));
+  transition: background 0.7s;
+}
 
 .container.warm{
   background-image: url('../assets/warm-bg.jpg');
+  
 }
 main{
   min-height: 100vh;
@@ -54,13 +61,13 @@ main{
 
 .content{
   
- box-sizing: border-box;
+  
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
   width: 100%;
-  padding: 100px 0;
   height: 100vh;
   
 }
@@ -88,18 +95,16 @@ main{
 .bottom{
   display: flex;
   background-color: rgba(225, 225, 225, 0.75);
-  margin: 0 auto ;
+  margin-top: 50px;
   
- 
   border-radius: 20px;
   font-size: 20px;
   width: 70%;
-  padding: 0 15px;
+  padding: 1px 15px;
   justify-content: space-evenly;
   font-family:Arial, Helvetica, sans-serif;
 }
 .top>div{
-  margin: 1vh 0;
   font-size: 25px;
 }
 .top .location{
@@ -107,20 +112,22 @@ main{
   font-weight: 500;
 }
 .top .temp{
-  font-size: 90px;
+  font-size: 3rem;
+  padding: 20px 0px;
   font-weight: 600;
 
 }
 
 .top{
   width: 70%;
-  margin: 0 auto;
-  margin-top: 8vh;
+  
+  margin-top: 10vh;
   border-radius: 20px;
   display: flex;
-  padding:  0px 15px;
+  padding:  10px 15px;
   background-color: rgba(225, 225, 225, 0.75);
   flex-direction: column;
+  margin-bottom: 40px;
 
 
 }
